@@ -1,0 +1,67 @@
+{
+  "name": "beacon-ball",
+  "version": "1.0.0",
+  "description": "Throwing some info around the office, a project lounge.",
+  "main": "src/index.js",
+  "scripts": {
+    "prewatch": "npm run example:serve &",
+    "watch": "watchify src/index.js -o dist/app.js -v -d .",
+    "ci": "npm run lint && npm run coverage && npm run build",
+    "coverage": "istanbul cover _mocha -- --compilers js:babel/register test && istanbul check-coverage",
+    "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/app.js",
+    "postbuild": "npm run less",
+    "less": "lessc --clean-css dist/theme.less dist/theme.min.css",
+    "example:build": "ulimit -n 9999; browserify src/index.js > dist/app.js",
+    "postexample:build": "npm run example:serve",
+    "example:serve": "open http://localhost:3000; serve dist/",
+    "lint": "make-up src test example && echo '<U+1F37B>  All good!'",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxpaul/beacon-ball.git"
+  },
+  "keywords": [
+    "beacon",
+    "physical",
+    "web"
+  ],
+  "author": "Paul Clarke <paul.clarke@holidayextras.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hxpaul/beacon-ball/issues"
+  },
+  "homepage": "https://github.com/hxpaul/beacon-ball#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "serve": "^1.4.0",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "babelify": "^7.2.0",
+    "bootstrap": "^3.3.6",
+    "browserify": "^12.0.1",
+    "less": "^2.5.3",
+    "less-plugin-clean-css": "^1.5.1",
+    "pouchdb": "^5.1.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "ui-brand-hx": "git+ssh://git@github.com:holidayextras/ui-brand-hx.git"
+  }
+}
