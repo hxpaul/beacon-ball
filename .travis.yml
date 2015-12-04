@@ -14,13 +14,13 @@ deploy:
   provider: s3
   access_key_id: AKIAJX76J2GC5TXS7E2Q
   secret_access_key:
-    secure: TLmIckFJML+JBuPUoFwnJaBuTfJjbx9X+TXV8h8DpanLYvW+yW6WO4emJoP+CDu0W4dGeQIHhXePJBCyaZGrkm6kUJVEcnQCf2AlOH8/pLxrGi0wUU+u1Z3y8IKCh0dSaaJdXPCwaP/Mo179iNEyDxL2QNhXlJ6RskSq6trYRnTfCDaxvuIAhC7gG6D0xmSQ8hct2fsF6rlK2ENFAKFWRS8MZBhuQNQdi+xe2/k7JqB2aiqQUbooyyt6RS3YfLRCi8rpAsJ+iQJnMzGdDSV+mt0P3F6QszDnEk1Gun5FMCgZ8Hp9oXClRTosMaEZcS/n/WVQijsyKE5AY8Ne075GNs/B2VKIUmzSTZKlQyDNuRSsSpXORka3heh9gcRxa0NBiF0KzJMGyg32sWRVWxA7O0jWdXCjnTGz3HTWr9B4LlC/ScweZHVn3gXga1rm+utc1nGbUqB77SPZ4FFRTC7nk+HZ1NqA4rt1BtTS9A00MiSH5nA4PdZweWCl3YmI19Fgdr837hgEbsvTO5JQZQ5AxGO9sJCTBKeMiASth+Svi9mlgLNhEu2Uxa2lfNbQh8OQOvbg2LcJ5UONxrVdrjfvYb6w4AFuRKm9RYcBEDgesGc3h8/kr1hdTyIs+SfwAfusZOKBp1h8FNpaJYA3WCslsHwQ9c6D6geAjyfW5gAEHG0=
+    secure: AFwaMtVJ67lA/jI+1AX5B+jnj6KKj00DuAt9hWhAxn2bzYHqpNhp3OHE+oulK1bT6hqisHmlyjO1mkadPLWs4mDbRJTbPT9qWaVlB+FRgFEE1swEJP4+sT1RVuZaqTI6v8rgL8DoJfEBtu7xBcBZovoVBWjzMdfatWGzuui5ExHx7W9ojPoiEpNy/NYY6yvEw3eAjFl0W8ioc+0GTyAO9+vkmAQjHfasgi3fwZqfzf9SW+xw6NX8uLpRJhTi5wQmVy69AkMcdOrW094Vri2IjYl0/p8vWaWweftJvDQT1DvO928e2KHka1s2E9z5mLHtR0x/LAXdBpJc72ZeBPUHRPEONdSf8f+a+j9mJRXKRbYubo5zLmdbZDm1M03TkB35sgZMVMycM04SHwJK1laG/jPLBEBUG9Kv+vENlYhwV75wY34Vx31fXQDD1CM5Yz/IAc2grnHg0tSfLrUN1OUbfRDGx/8h+IpclCv8BuL5EM+Dy8iH63NL7jMYkT5RzUo+7IHTFQNRHowPCzutSZqqsO6LmkA0wmWjInnQznmS+tuhQsxFoWmkQVNKu+z1Wm2YX8/NhEPVZODwEEnGqf7T1ZWikbv7WAGwFE789JbLvEkSLP/cDg2l7lgc0DGjYGlLULd3iZ62IM5s5TLvUop1Wb3ULJC1SlshKVrL8V2BFlQ=
   bucket: hx-production-repo
   skip_cleanup: true
   region: eu-west-1
-  local-dir: example
-  upload-dir: hx-tripapp-product-parking
-  upload_dir: hx-tripapp-product-parking
+  local-dir: dist
+  upload-dir: hx-beacon-ball
+  upload_dir: hx-beacon-ball
   acl: public_read
   on:
     branch: master
