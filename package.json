@@ -6,7 +6,7 @@
   "scripts": {
     "prewatch": "npm run example:serve &",
     "watch": "watchify src/index.js -o dist/app.js -v -d .",
-    "ci": "npm run lint && npm run coverage && npm run build",
+    "ci": "npm test && npm run build",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register test && istanbul check-coverage",
     "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/app.js",
     "postbuild": "npm run less",
@@ -61,6 +61,7 @@
     "less-plugin-clean-css": "^1.5.1",
     "pouchdb": "^5.1.0",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "uglifyjs": "^2.4.10"
   }
 }
