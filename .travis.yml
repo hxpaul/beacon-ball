@@ -3,6 +3,7 @@ node_js:
 - '0.12'
 script:
 - npm run ci
+- npm run build
 install:
 - npm install npm@2.9.1
 - ./node_modules/.bin/npm install

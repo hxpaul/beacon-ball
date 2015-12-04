@@ -6,7 +6,7 @@
   "scripts": {
     "prewatch": "npm run example:serve &",
     "watch": "watchify src/index.js -o dist/app.js -v -d .",
-    "ci": "npm test && npm run build",
+    "ci": "npm test",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register test && istanbul check-coverage",
     "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/app.js",
     "postbuild": "npm run less",
@@ -48,8 +48,10 @@
   "devDependencies": {
     "babel": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "chai": "^3.4.1",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
+    "react-tests-globals-setup": "^1.0.0",
     "serve": "^1.4.0",
     "watchify": "^3.6.1"
   },
