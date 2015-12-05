@@ -4,7 +4,7 @@
   "description": "Throwing some info around the office, a project lounge.",
   "main": "src/index.js",
   "scripts": {
-    "watch": "open http://localhost:3000 && watchify src/index.js -o dist/beacon-ball.js -v -d .",
+    "watch": "open dist/index.html && watchify src/index.js -o dist/beacon-ball.js -v -d .",
     "ci": "npm test",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register test && istanbul check-coverage",
     "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/beacon-ball.min.js",

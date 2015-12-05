@@ -14,7 +14,6 @@ const App = React.createClass({
     this.getLinks();
   },
   getLinks() {
-    const self = this;
     db.allDocs({include_docs: true}, (err, data) => {
       if (err) return this.setState({ err });
       this.setState({ links: data.rows });
@@ -33,13 +32,15 @@ const App = React.createClass({
     });
   },
   render() {
-    if (!this.state) return null;
     const links = this.state.links;
     return <div>
       <h1>Beacon ball</h1>
       {this.state.err ? <p className="err">{JSON.stringify(this.state.err, null, 2)}</p> : null}
       <Form save={this.save} />
       <UrlHistory links={links} delete={this.delete} />
+      <p>Add a url here and it'll be attached to the beacon ball, which you can throw around the office.</p>
+      <p>See <a href="https://github.com/hxpaul/beacon-ball">repo maintainer</a> for the username and password and beacon ball.</p>
+      <p><a href="http://www.clarkeology.com/m/23732/More+beacon+fun">Read more about beacons</a>.</p>
     </div>;
   }
 });

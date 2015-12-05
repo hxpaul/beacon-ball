@@ -5,7 +5,7 @@ Throwing some info around the office, a project lounge.
 ```
 npm install
 ```
-You can run this locally but the beacon needs a fixed url at the moment, so this needs to be run from one agreed public url. So we'll publish this to aws.
+You can run this locally but the beacon needs a fixed url, [so it is hosted here](http://hxpaul.github.io/beacon-ball/). Push changes to the gh-pages branch to deploy.
 
 
 # Requirements
