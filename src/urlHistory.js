@@ -33,11 +33,20 @@ const Form = React.createClass({
     };
   },
 
+  hasProtocol(url) {
+    return /^\w+:\/\//.test(url);
+  },
   url(doc) {
-    return doc.href;
+    if (this.hasProtocol(doc.href)) {
+      return doc.href;
+    }
+    return 'http://' + doc.href;
   },
 
   label(doc) {
+    if (this.hasProtocol(doc.href)) {
+      return doc.href.replace(/^\w+:\/\//, '');
+    }
     return doc.href;
   },
 
