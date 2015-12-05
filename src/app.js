@@ -32,11 +32,6 @@ const App = React.createClass({
       this.getLinks();
     });
   },
-  nuke() {
-    console.warn('nuking whole db');
-    db.destroy();
-    this.getLinks();
-  },
   render() {
     if (!this.state) return null;
     const links = this.state.links;
@@ -45,7 +40,6 @@ const App = React.createClass({
       {this.state.err ? <p className="err">{JSON.stringify(this.state.err, null, 2)}</p> : null}
       <Form save={this.save} />
       <UrlHistory links={links} delete={this.delete} />
-      <button onClick={this.nuke}>Nuke it</button>
     </div>;
   }
 });

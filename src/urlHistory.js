@@ -16,7 +16,6 @@ const Form = React.createClass({
   },
 
   delete(link) {
-    console.log('in url history, deleting', link );
     const deleting = this.state.deleting;
     deleting.push(link.id);
     this.setState({ deleting });
@@ -34,16 +33,23 @@ const Form = React.createClass({
     };
   },
 
+  url(doc) {
+    return doc.href;
+  },
+
+  label(doc) {
+    return doc.href;
+  },
+
   render() {
     const links = this.props.links;
     const { deleting } = this.state;
     return <ul>
       {links.map((link, index) => {
-        console.log(index, link);
         const isDeleting = deleting.indexOf(link.id) !== -1;
         const doc = link.doc || {};
         return <li key={index}>
-          <a href={doc.href}>{doc.label || doc.href}</a>
+          <a href={this.url(doc)}>{this.label(doc)}</a>
           {' '}
           <button disabled={isDeleting} onClick={() => this.delete(link)}>delete</button>
         </li>;

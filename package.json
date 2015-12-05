@@ -4,16 +4,12 @@
   "description": "Throwing some info around the office, a project lounge.",
   "main": "src/index.js",
   "scripts": {
-    "prewatch": "npm run example:serve &",
-    "watch": "watchify src/index.js -o dist/app.js -v -d .",
+    "watch": "open http://localhost:3000 && watchify src/index.js -o dist/beacon-ball.js -v -d .",
     "ci": "npm test",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register test && istanbul check-coverage",
-    "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/app.js",
+    "build": "NODE_ENV=production browserify src/index.js | uglifyjs -m -c > dist/beacon-ball.min.js",
     "postbuild": "npm run less",
-    "less": "lessc --clean-css dist/theme.less dist/theme.min.css",
-    "example:build": "ulimit -n 9999; browserify src/index.js > dist/app.js",
-    "postexample:build": "npm run example:serve",
-    "example:serve": "open http://localhost:3000; serve dist/",
+    "less": "lessc --clean-css dist/theme.less dist/beacon-ball.min.css",
     "lint": "make-up src test example && echo '<U+1F37B>  All good!'",
     "test": "mocha"
   },
@@ -23,8 +19,9 @@
   },
   "keywords": [
     "beacon",
-    "physical",
-    "web"
+    "iot",
+    "internet-of-things",
+    "physical-web"
   ],
   "author": "Paul Clarke <paul.clarke@holidayextras.com>",
   "license": "MIT",
@@ -51,9 +48,9 @@
     "babel-preset-react": "^6.3.13",
     "chai": "^3.4.1",
     "istanbul": "^0.4.1",
+    "make-up": "^6.0.0",
     "mocha": "^2.3.4",
     "react-tests-globals-setup": "^1.0.0",
-    "serve": "^1.4.0",
     "watchify": "^3.6.1"
   },
   "dependencies": {

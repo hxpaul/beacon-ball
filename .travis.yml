@@ -3,25 +3,6 @@ node_js:
 - '0.12'
 script:
 - npm run ci
-- npm run build
-install:
-- npm install npm@2.9.1
-- ./node_modules/.bin/npm install
-- ls -l dist
 cache:
   directories:
   - node_modules
-deploy:
-  provider: s3
-  access_key_id: AKIAJX76J2GC5TXS7E2Q
-  secret_access_key:
-    secure: AFwaMtVJ67lA/jI+1AX5B+jnj6KKj00DuAt9hWhAxn2bzYHqpNhp3OHE+oulK1bT6hqisHmlyjO1mkadPLWs4mDbRJTbPT9qWaVlB+FRgFEE1swEJP4+sT1RVuZaqTI6v8rgL8DoJfEBtu7xBcBZovoVBWjzMdfatWGzuui5ExHx7W9ojPoiEpNy/NYY6yvEw3eAjFl0W8ioc+0GTyAO9+vkmAQjHfasgi3fwZqfzf9SW+xw6NX8uLpRJhTi5wQmVy69AkMcdOrW094Vri2IjYl0/p8vWaWweftJvDQT1DvO928e2KHka1s2E9z5mLHtR0x/LAXdBpJc72ZeBPUHRPEONdSf8f+a+j9mJRXKRbYubo5zLmdbZDm1M03TkB35sgZMVMycM04SHwJK1laG/jPLBEBUG9Kv+vENlYhwV75wY34Vx31fXQDD1CM5Yz/IAc2grnHg0tSfLrUN1OUbfRDGx/8h+IpclCv8BuL5EM+Dy8iH63NL7jMYkT5RzUo+7IHTFQNRHowPCzutSZqqsO6LmkA0wmWjInnQznmS+tuhQsxFoWmkQVNKu+z1Wm2YX8/NhEPVZODwEEnGqf7T1ZWikbv7WAGwFE789JbLvEkSLP/cDg2l7lgc0DGjYGlLULd3iZ62IM5s5TLvUop1Wb3ULJC1SlshKVrL8V2BFlQ=
-  bucket: hx-production-repo
-  skip_cleanup: true
-  region: eu-west-1
-  local-dir: dist
-  upload-dir: hx-beacon-ball
-  upload_dir: hx-beacon-ball
-  acl: public_read
-  on:
-    branch: master
