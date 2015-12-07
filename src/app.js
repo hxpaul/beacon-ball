@@ -41,7 +41,7 @@ module.exports = React.createClass({
         <Form save={this.save} />
         <UrlHistory links={links} delete={this.delete} />
         <p>Add a url here and it'll be attached to the beacon ball, which you can throw around the office.</p>
-        <p>See <a href="https://github.com/hxpaul/beacon-ball">repo maintainer</a> for the username and password and beacon ball.</p>
+        <p>Install <a href="https://github.com/dermike/physical-web-scan">physical web scan</a> or <a href="https://play.google.com/store/apps/details?id=physical_web.org.physicalweb&hl=en">this app</a> or ios equivalent to scan the beacon ball.</p>
         <p><a href="http://www.clarkeology.com/m/23732/More+beacon+fun">Read more about beacons</a>.</p>
       </div>
     );

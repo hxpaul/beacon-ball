@@ -11,13 +11,6 @@ module.exports = React.createClass({
     };
   },
 
-  delete(link) {
-    const deleting = this.state.deleting;
-    deleting.push(link.id);
-    this.setState({ deleting });
-    this.props.delete(link);
-  },
-
   propTypes: {
     delete: func,
     links: arrayOf(shape({
@@ -32,9 +25,17 @@ module.exports = React.createClass({
     };
   },
 
+  delete(link) {
+    const deleting = this.state.deleting;
+    deleting.push(link.id);
+    this.setState({ deleting });
+    this.props.delete(link);
+  },
+
   hasProtocol(url) {
     return /^\w+:\/\//.test(url);
   },
+
   url(doc) {
     if (this.hasProtocol(doc.href)) {
       return doc.href;
