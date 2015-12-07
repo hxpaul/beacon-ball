@@ -1,7 +1,8 @@
-import PouchDB from 'pouchdb';
+'use strict';
+var PouchDB = require('pouchdb');
 
-const localDB = new PouchDB('beacon-ball');
-const remoteDB = new PouchDB('https://pauly.cloudant.com/beacon-ball')
+const localDB = module.exports = new PouchDB('beacon-ball');
+const remoteDB = new PouchDB('https://pauly.cloudant.com/beacon-ball');
 localDB.sync(remoteDB, { live: true });
 
 localDB.saveURL = (url, callback) => {
@@ -10,5 +11,3 @@ localDB.saveURL = (url, callback) => {
   };
   localDB.post(doc, callback);
 };
-
-export default localDB;

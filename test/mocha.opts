@@ -1,1 +1,2 @@
+--compilers .:babel-core/register
 --require react-tests-globals-setup

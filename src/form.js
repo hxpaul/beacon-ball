@@ -1,8 +1,9 @@
-import React from 'react';
+'use strict';
+var React = require('react');
 
 const { func } = React.PropTypes;
 
-const Form = React.createClass({
+module.exports = React.createClass({
 
   propTypes: {
     save: func.isRequired
@@ -14,12 +15,12 @@ const Form = React.createClass({
   },
 
   render( ) {
-    return <form onSubmit={this.save}>
-      <label htmlFor="url">URL</label>
-      {' '}
-      <input placeholder="Give me a url..." ref="url" />
-    </form>;
+    return (
+      <form onSubmit={this.save}>
+        <label htmlFor="url">URL</label>
+        {' '}
+        <input placeholder="Give me a url..." ref="url" />
+      </form>
+    );
   }
 });
-
-export default Form;

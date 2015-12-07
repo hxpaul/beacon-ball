@@ -1,13 +1,9 @@
-import React from 'react';
+'use strict';
+const React = require('react');
 
 const { arrayOf, shape, string, func } = React.PropTypes;
 
-const link = shape({
-  href: string,
-  label: string
-});
-
-const Form = React.createClass({
+module.exports = React.createClass({
 
   getInitialState() {
     return {
@@ -24,7 +20,10 @@ const Form = React.createClass({
 
   propTypes: {
     delete: func,
-    links: arrayOf(link)
+    links: arrayOf(shape({
+      href: string,
+      label: string
+    }))
   },
 
   getDefaultProps() {
@@ -53,18 +52,20 @@ const Form = React.createClass({
   render() {
     const links = this.props.links;
     const { deleting } = this.state;
-    return <ul>
+    return (
+      <ul>
       {links.map((link, index) => {
         const isDeleting = deleting.indexOf(link.id) !== -1;
         const doc = link.doc || {};
-        return <li key={index}>
-          <a href={this.url(doc)}>{this.label(doc)}</a>
-          {' '}
-          <button disabled={isDeleting} onClick={() => this.delete(link)}>delete</button>
-        </li>;
+        return (
+          <li key={index}>
+            <a href={this.url(doc)}>{this.label(doc)}</a>
+            {' '}
+            <button disabled={isDeleting} onClick={() => this.delete(link)}>delete</button>
+          </li>
+        );
       })}
-    </ul>;
+      </ul>
+    );
   }
-})
-
-export default Form;
+});
