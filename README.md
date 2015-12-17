@@ -1,5 +1,9 @@
 # beacon-ball
-Throwing some info around the office, a project lounge.
+Throwing some info around the office, a project lounge idea.
+The idea is that we want human interaction to remain at the forefront of our minds. Sitting behind a computer all day means it can often be limited.
+
+What do we do all day? We share information! Rather than just sending a link via a chat, why not create something that implements a bit of fun alongside the human interaction? This is where the beacon ball comes in!
+
 
 # Installation
 ```
